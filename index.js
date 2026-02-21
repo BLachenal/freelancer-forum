@@ -38,13 +38,37 @@ let AveragePrice = averageCost(freelanceContractors);
 
 // == Components ==
 
+//function to create a single freelancer in hmtl
 function singleFreelancer(freelanceContractor){
-    const $card = document.createElement("figure");
-    $card.classList.add("individual");
-    $card.innerHTML = `
-    <p>${freelanceContractor.name}</p>
-    <p>${freelanceContractor.occupation}</p>
-    <p>${freelanceContractor.price}</p>
+    const $tableRow = document.createElement("tr");
+    $tableRow.classList.add("individual");
+    $tableRow.innerHTML = `
+    <th>${freelanceContractor?.name}</th>
+    <td>${freelanceContractor.occupation}</td>
+    <td>${freelanceContractor.price}</td>
     `;
-    return $card;
+    return $tableRow;
 }
+
+//function to create the entire table of freelancers
+function tableOfFreelancers(){
+    const $table = document.createElement("tbody");
+    $table.classList.add("individuals");
+
+    const $individuals = freelanceContractors.map(singleFreelancer);
+    $table.replaceChildren(...$individuals);
+    return $table;
+}
+
+function render(){
+    const $app = document.querySelector("#app");
+  $app.innerHTML = `
+    <h1>Freelancer Forum</h1>
+    <table>
+        <tbody id="FreelancerRows"></tbody>
+    </table>
+  `;
+  $app.querySelector("#FreelancerRows").replaceWith(tableOfFreelancers());
+
+}
+render();
