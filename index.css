@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+div{
+    display: flex;
+    flex-direction: column;
+}
+table{
+    border: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+h1, h3 {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+#FreelancerRows{
+    display: flex;
+    justify-content: space-between;
+}
+thead th {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+.individuals {
+    width: 100%;
+    max-width: 1000px; 
+    border-collapse: collapse; 
+    border: 2px solid black;
+}
+.individuals th {
+    text-align: left;
+    padding: 2px 4px;
+    border-bottom: 1px dotted #858484;
+    border-right: 1px dotted #858484;
+    font-weight: bold;
+}
+.individuals td {
+    padding: 2px 4px;
+    text-align: center;
+    border-bottom: 1px dotted #858484;
+    border-right: 1px dotted #858484;
+    width: 100%;
+}
+

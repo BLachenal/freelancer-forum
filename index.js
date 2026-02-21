@@ -43,7 +43,7 @@ function singleFreelancer(freelanceContractor){
     const $tableRow = document.createElement("tr");
     $tableRow.classList.add("individual");
     $tableRow.innerHTML = `
-    <th>${freelanceContractor?.name}</th>
+    <th>${freelanceContractor.name}</th>
     <td>${freelanceContractor.occupation}</td>
     <td>${freelanceContractor.price}</td>
     `;
@@ -60,11 +60,20 @@ function tableOfFreelancers(){
     return $table;
 }
 
+//function to render everything on screen.
 function render(){
     const $app = document.querySelector("#app");
   $app.innerHTML = `
     <h1>Freelancer Forum</h1>
+    <h3>Average cost: $${AveragePrice.toFixed(2)}</h3>
     <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Occupation</th>
+                <th>Price</th>
+            </tr>
+        </thead>
         <tbody id="FreelancerRows"></tbody>
     </table>
   `;
